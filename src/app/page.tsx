@@ -39,8 +39,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
-      <Toaster position="top-center" richColors />
       <ReportHotspotDialog open={reportDialogOpen} onOpenChange={setReportDialogOpen} />
+      <Toaster position="top-center" richColors toastOptions={{ className: 'z-[10000]' }} />
       
       {/* Mobile Layout */}
       <div className="lg:hidden">
