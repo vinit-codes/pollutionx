@@ -73,18 +73,17 @@ export function ReportHotspotDialog({ open, onOpenChange }: ReportHotspotDialogP
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] bg-gray-800 border-gray-700 text-white">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-white">Report a Pollution Hotspot</DialogTitle>
-          <DialogDescription className="text-gray-400">
-            Help us improve air quality monitoring by reporting pollution sources in your area.
-            Your contribution is valuable to the community.
+      <DialogContent className="w-[95vw] max-w-[500px] max-h-[90vh] bg-gray-800 border-gray-700 text-white m-4">
+        <DialogHeader className="pb-4">
+          <DialogTitle className="text-lg sm:text-xl font-bold text-white">Report Pollution</DialogTitle>
+          <DialogDescription className="text-sm text-gray-400">
+            Help monitor air quality in your area
           </DialogDescription>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-4 py-4">
-          <div className="space-y-2">
-            <Label htmlFor="locationName" className="text-gray-200">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-3">
+            <Label htmlFor="locationName" className="text-gray-200 text-sm font-medium">
               Location Name <span className="text-red-400">*</span>
             </Label>
             <Input
@@ -93,12 +92,12 @@ export function ReportHotspotDialog({ open, onOpenChange }: ReportHotspotDialogP
               value={formData.locationName}
               onChange={(e) => setFormData({ ...formData, locationName: e.target.value })}
               required
-              className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+              className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 h-12 text-base"
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="pollutionType" className="text-gray-200">
+          <div className="space-y-3">
+            <Label htmlFor="pollutionType" className="text-gray-200 text-sm font-medium">
               Pollution Type <span className="text-red-400">*</span>
             </Label>
             <Select
@@ -106,46 +105,46 @@ export function ReportHotspotDialog({ open, onOpenChange }: ReportHotspotDialogP
               value={formData.pollutionType}
               onChange={(e) => setFormData({ ...formData, pollutionType: e.target.value })}
               required
-              className="bg-gray-700 border-gray-600 text-white"
+              className="bg-gray-700 border-gray-600 text-white h-12 text-base"
             >
-              <option value="vehicular">Vehicular Emissions</option>
-              <option value="industrial">Industrial Pollution</option>
-              <option value="fire">Open Burning / Fire</option>
-              <option value="construction">Construction Dust</option>
-              <option value="waste">Waste Burning</option>
-              <option value="other">Other</option>
+              <option value="vehicular">🚗 Vehicular Emissions</option>
+              <option value="industrial">🏭 Industrial Pollution</option>
+              <option value="fire">🔥 Open Burning / Fire</option>
+              <option value="construction">🚧 Construction Dust</option>
+              <option value="waste">🗑️ Waste Burning</option>
+              <option value="other">❓ Other</option>
             </Select>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="description" className="text-gray-200">
+          <div className="space-y-3">
+            <Label htmlFor="description" className="text-gray-200 text-sm font-medium">
               Description <span className="text-red-400">*</span>
             </Label>
             <Textarea
               id="description"
-              placeholder="Please describe the pollution source, its severity, and any other relevant details..."
+              placeholder="Describe the pollution source and its impact..."
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               required
-              rows={4}
-              className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+              rows={3}
+              className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 text-base resize-none"
             />
           </div>
 
-          <DialogFooter className="gap-2 sm:gap-0">
+          <DialogFooter className="flex-col-reverse sm:flex-row gap-3 pt-4 border-t border-gray-700">
             <Button
               type="button"
               variant="outline"
               onClick={() => onOpenChange(false)}
               disabled={loading}
-              className="border-gray-600 text-gray-300 hover:bg-gray-700"
+              className="w-full sm:w-auto h-12 border-gray-600 text-gray-300 hover:bg-gray-700 text-base"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={loading}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              className="w-full sm:w-auto h-12 bg-green-600 hover:bg-green-700 text-white font-medium text-base"
             >
               {loading ? 'Submitting...' : 'Submit Report'}
             </Button>
