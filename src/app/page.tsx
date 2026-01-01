@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ReportHotspotDialog } from '@/components/ReportHotspotDialog';
 import { Toaster } from 'sonner';
+import PWAInstallButton from '@/components/PWAInstallButton';
 
 // Dynamic import with SSR disabled for the map  
 const DynamicMap = dynamic(() => import('@/components/Map'), {
@@ -41,6 +42,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
       <ReportHotspotDialog open={reportDialogOpen} onOpenChange={setReportDialogOpen} />
       <Toaster position="top-center" richColors toastOptions={{ className: 'z-[10000]' }} />
+      <PWAInstallButton />
       
       {/* Mobile Layout */}
       <div className="lg:hidden">

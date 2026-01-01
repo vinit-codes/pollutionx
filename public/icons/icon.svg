@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bg-gradient)" rx="80"/>
+  
+  <!-- Earth/Globe -->
+  <circle cx="256" cy="200" r="80" fill="url(#icon-gradient)" opacity="0.8"/>
+  
+  <!-- Pollution clouds -->
+  <ellipse cx="200" cy="150" rx="25" ry="15" fill="#ef4444" opacity="0.7"/>
+  <ellipse cx="320" cy="160" rx="20" ry="12" fill="#f97316" opacity="0.7"/>
+  <ellipse cx="240" cy="130" rx="15" ry="10" fill="#fbbf24" opacity="0.7"/>
+  
+  <!-- Map markers -->
+  <path d="M180 320 L180 290 L190 280 L200 290 L200 320 Z" fill="#ef4444"/>
+  <circle cx="190" cy="285" r="8" fill="#dc2626"/>
+  
+  <path d="M280 340 L280 310 L290 300 L300 310 L300 340 Z" fill="#f97316"/>
+  <circle cx="290" cy="305" r="8" fill="#ea580c"/>
+  
+  <path d="M330 320 L330 290 L340 280 L350 290 L350 320 Z" fill="#22c55e"/>
+  <circle cx="340" cy="285" r="8" fill="#16a34a"/>
+  
+  <!-- Monitoring waves -->
+  <path d="M 150 350 Q 200 330 250 350 T 350 350" stroke="url(#icon-gradient)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 170 370 Q 210 355 250 370 T 330 370" stroke="url(#icon-gradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <!-- App title -->
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">PollutionX</text>
+  <text x="256" y="450" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#9ca3af">Air Quality Monitor</text>
+</svg>
